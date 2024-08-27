@@ -11,7 +11,7 @@
     META-INF/
     ...
 
-- To read refer to [ProtoBuffer](ProtoBuffer)
+- To read resources.asrc refer to [ResourceDump](https://github.com/koraykuyubasi/review/blob/main/README.md#resourcedump)
 
 
 ## Bundle Contents
@@ -35,14 +35,20 @@
     BUNDLE-METADATA/
     BundleConfig.pb
 
+- To read .pb files refer to [ProtoBuffer](https://github.com/koraykuyubasi/review/blob/main/README.md#protobuffer)
+
 ## All Apks Generated From Bundle
     splits/         - fragments of apk divided according to bundle{} in app/build.gradle
         
     toc.pb          - all variants and app descriptions
+    
+- To read .pb files refer to [ProtoBuffer](https://github.com/koraykuyubasi/review/blob/main/README.md#protobuffer)
 
 ## Universal(Single) Apks Contents
     universal.apk
     toc.pb
+    
+- To read .pb files refer to [ProtoBuffer](https://github.com/koraykuyubasi/review/blob/main/README.md#protobuffer)
 
 ## bundletool(Generate Apk from bundle)
     Tool to generate apk content from bundle, useful options are shown below:
@@ -100,6 +106,6 @@
             < /home/koray/AndroidStudioProjects/MyApplication/toc.pb > toc.raw
 
 
-## Resources from Apk(for comparison)
+## ResourceDump
     aapt2 dump resources example.apk > example.apk.rscdump
 
