@@ -76,6 +76,24 @@ android {
         abi {
             enableSplit = true
         }
+        density {
+            enableSplit = true
+        }
+        language {
+            enableSplit = true
+        }
+//        storeArchive {
+//
+//        }
+//        texture {
+//
+//        }
+//        deviceTier {
+//
+//        }
+//        countrySet {
+//
+//        }
     }
 }
 
