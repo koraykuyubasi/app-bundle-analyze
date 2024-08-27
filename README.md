@@ -1,42 +1,46 @@
-# App Bundle Overview
+# App Bundle Analyze
 
-## Usual Apk Contents
-    AndroidManifest.xml
-    classes
+## Apk Contents
+    AndroidManifest.xml 
+    classes*.dex
     resources.asrc
     res/
     assets/
     lib/
+    kotlin/
     META-INF/
     ...
 
+- To read refer to [ProtoBuffer](ProtoBuffer)
+
+
 ## Bundle Contents
     base/
-        dex/
+        dex/            - compilation of classes that was in the apk
         lib/            - abi related
-        resources.pb    - strings etc.
+        resources.pb    - strings etc. To read refer to asd
         res/            - density related
         assets/
         root/
         META-INF/
-        native.pb
-        assets.pb
+        native.pb       - To read refer to asd
+        assets.pb       - To read refer to asd
         manifest/
         ...
+    dynamic1/
+        dex/
+        manifest/
+        res/
+        resources.pb
     BUNDLE-METADATA/
     BundleConfig.pb
-    META-INF/
 
 ## All Apks Generated From Bundle
     splits/         - fragments of apk divided according to bundle{} in app/build.gradle
-        master      - master apk contents that does not depend on splits
-        density     - screen size disparitions
-        language
-        abi
-        dynamicFeatures
+        
     toc.pb          - all variants and app descriptions
 
-## Universel(Single) Apks Contents
+## Universal(Single) Apks Contents
     universal.apk
     toc.pb
 
@@ -64,12 +68,37 @@
             --output-dir=/MyApp/my_pixel2_APK_set.apks
             --device-spec=/MyApp/bundletool/pixel2.json
 
-## How to Read .pb Files(change inputs accordingly)
-    protoc --experimental_allow_proto3_optional \
-       --proto_path=proto \
-       --decode=android.bundle.BuildApksResult \
-       commands.proto \
-        < /home/koray/AndroidStudioProjects/MyApplication/toc.pb > toc.raw
+## ProtoBuffer
+    Note: Credits to https://github.com/protocolbuffers/protobuf
+
+    resources.pb
+        protoc --experimental_allow_proto3_optional \
+           --proto_path=proto \
+           --decode=android.bundle.BuildApksResult \
+           commands.proto \
+            < /home/koray/AndroidStudioProjects/MyApplication/toc.pb > toc.raw
+
+    toc.pb
+        protoc --experimental_allow_proto3_optional \
+           --proto_path=proto \
+           --decode=android.bundle.BuildApksResult \
+           commands.proto \
+            < /home/koray/AndroidStudioProjects/MyApplication/toc.pb > toc.raw
+
+    native.pb
+        protoc --experimental_allow_proto3_optional \
+           --proto_path=proto \
+           --decode=android.bundle.BuildApksResult \
+           commands.proto \
+            < /home/koray/AndroidStudioProjects/MyApplication/toc.pb > toc.raw
+
+    assets.pb
+        protoc --experimental_allow_proto3_optional \
+           --proto_path=proto \
+           --decode=android.bundle.BuildApksResult \
+           commands.proto \
+            < /home/koray/AndroidStudioProjects/MyApplication/toc.pb > toc.raw
+
 
 ## Resources from Apk(for comparison)
     aapt2 dump resources example.apk > example.apk.rscdump
