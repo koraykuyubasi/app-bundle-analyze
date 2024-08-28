@@ -10,6 +10,11 @@
     kotlin/
     DebugProbesKt.bin
     META-INF/
+    play-services-basement.properties
+    play-services-tasks.properties
+    asset-delivery-ktx.properties
+    asset-delivery.properties
+    core-common.properties
     kotlin-tooling-metadata.json (release only)
 
 - To read resources.asrc refer to [ResourceDump](https://github.com/koraykuyubasi/review/blob/main/README.md#resourcedump)
@@ -27,11 +32,19 @@
         native.pb
         assets.pb
         manifest/
-    dynamic1/
+    dynamic*/
+        lib/
+        assets/
         dex/
         manifest/
         res/
+        native.pb
+        assets.pb
         resources.pb
+    asset_pack_*/
+        assets/
+        manifest/
+        assets.pb
     BUNDLE-METADATA/
     BundleConfig.pb
 
@@ -60,15 +73,47 @@ bundletool build-apks --bundle=app/build/outputs/bundle/debug.aab --output=tmp/a
                 base-x86.apk
                 base-arm64_v8a.apk
                 ...
-            dynamic1-(master).apk
-                dynamic1-master.apk
-                dynamic1-master_2.apk
-            dynamic1-(language).apk
-                dynamic1-tr.apk
-                dynamic1-en.apk
+            dynamic*-(master).apk
+                dynamic*-master.apk
+                dynamic*-master_2.apk
+            dynamic*-(language).apk
+                dynamic*-tr.apk
+                dynamic*-en.apk
+                ...
+            dynamic*-(abi).apk
+                dynamic*-x86.apk
+                dynamic*-arm64_v8a.apk
                 ...
             dynamic1-(density).apk //TODO
-            dynamic1-(abi).apk //TODO
+        instant/
+            instant-base.(master).apk
+                instant-base-master.apk
+            instant-base-(density).apk
+                instant-base-xhdpi.apk
+                instant-base-xxhdpi.apk
+                ...
+            instant-base-(language).apk
+                instant-base-tr.apk
+                instant-base-fr.apk
+                ...
+            instant-base-(abi).apk
+                instant-base-x86.apk
+                instant-base-arm64_v8a.apk
+                ...
+            instant-dynamic2.(master).apk
+                instant-dynamic2-master.apk
+                ...
+            instant-dynamic2.(language).apk
+                instant-dynamic2.fr.apk
+                instant-dynamic2.en.apk
+                ...
+            instant-dynamic2.(abi).apk
+                instant-dynamic2.x86.apk
+                instant-dynamic2.arm64_v8a.apk
+                ...
+        
+        asset-slices/
+            asset_pack_*.master.apk
         toc.pb                              - all variants and app descriptions
     
 - To read .pb files refer to [ProtoBuffer](https://github.com/koraykuyubasi/review/blob/main/README.md#protobuffer)
