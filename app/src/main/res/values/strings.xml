@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="title_dynamicfeature">dynamic1</string>
-    <string name="title_dynamic1">dynamic1</string>
-    <string name="title_dynamic2">Module Title</string>
-    <string name="title_dynamic3">Module Title</string>
-    <string name="title_dynamic4">Module Title</string>
+    <string name="title_dynamicfeature" translatable="false">dynamic1</string>
+    <string name="title_dynamic1" translatable="false">dynamic1</string>
+    <string name="title_dynamic2" translatable="false">Module Title</string>
+    <string name="title_dynamic3" translatable="false">Module Title</string>
+    <string name="title_dynamic4" translatable="false">Module Title</string>
 </resources>
