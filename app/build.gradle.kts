@@ -70,7 +70,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    dynamicFeatures += setOf(":dynamic1", ":dynamic2", ":dynamic3")
+    dynamicFeatures += setOf(":dynamic1", ":dynamic2", ":dynamic3", ":dynamic4", ":asset_pack_1", ":asset_pack_2", ":asset_pack_3")
 
     bundle {
         abi {
@@ -107,6 +107,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.asset.delivery)
+    implementation(libs.asset.delivery.ktx)
     implementation(project(":libB"))
 //    implementation(libs.core.ktx)
     testImplementation(libs.junit)

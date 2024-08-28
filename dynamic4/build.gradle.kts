@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 android {
-    namespace = "com.example.dynamic3"
+    namespace = "com.example.dynamic4"
     compileSdk = 34
 
     defaultConfig {
