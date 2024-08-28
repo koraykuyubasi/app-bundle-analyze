@@ -15,4 +15,7 @@ dynamic1/build
 .externalNativeBuild
 .cxx
 local.properties
+asset_pack_1/build
+asset_pack_2/build
+asset_pack_3/build
 bundletool-all-1.17.0.jar

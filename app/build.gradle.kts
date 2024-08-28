@@ -36,7 +36,6 @@ android {
         }
     }
 
-    dynamicFeatures
     externalNativeBuild{
         cmake{
             path = file("src/main/cpp/CMakeLists.txt")
@@ -70,7 +69,8 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    dynamicFeatures += setOf(":dynamic1", ":dynamic2", ":dynamic3", ":dynamic4", ":asset_pack_1", ":asset_pack_2", ":asset_pack_3")
+    dynamicFeatures += setOf(":dynamic1", ":dynamic2", ":dynamic3", ":dynamic4")
+    assetPacks += setOf(":asset_pack_1", ":asset_pack_2", ":asset_pack_3")
 
     bundle {
         abi {
