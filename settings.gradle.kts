@@ -22,7 +22,6 @@ dependencyResolutionManagement {
 rootProject.name = "My Application"
 include(":app")
 include(":libB")
-include(":app:dynamicfeature")
 include(":dynamic1")
 include(":dynamic2")
 include(":dynamic3")
